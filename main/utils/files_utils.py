@@ -1,9 +1,7 @@
 def lire_fichier(nom_fichier):
     try:
         with open(nom_fichier, 'r') as fichier:
-            # Lire les lignes du fichier dans une liste
-            lignes = fichier.readlines()
-            return lignes
+            return [ligne.strip() for ligne in fichier.readlines()]
     except FileNotFoundError:
         print(f"Le fichier '{nom_fichier}' n'a pas été trouvé.")
         return None

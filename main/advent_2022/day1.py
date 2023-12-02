@@ -6,8 +6,8 @@ def part1(path):
     elfs = []
     sum = 0
     for ligne in lignes:
-        if ligne.strip() != "":
-            sum += int(ligne.strip())
+        if ligne != "":
+            sum += int(ligne)
         else:
             elfs.append(sum)
             sum = 0
@@ -19,8 +19,8 @@ def part2(path):
     elfs = []
     somme = 0
     for ligne in lignes:
-        if ligne.strip() != "":
-            somme += int(ligne.strip())
+        if ligne != "":
+            somme += int(ligne)
         else:
             elfs.append(somme)
             somme = 0
