@@ -7,18 +7,29 @@ class Coord:
     def __add__(self, other):
         return Coord(self.x + other.x, self.y + other.y)
 
-    def __mul__(self, autre):
-        if isinstance(autre, int):
-            return Coord(self.x * autre, self.y * autre)
-        raise TypeError(f"Multiplication non supportée entre 'Coord' et {type(autre)}")
+    def __sub__(self, other):
+        return Coord(self.x - other.x, self.y - other.y)
 
-    def __rmul__(self, autre):
-        return self.__mul__(autre)
+    def __mul__(self, other):
+        if isinstance(other, int):
+            return Coord(self.x * other, self.y * other)
+        raise TypeError(f"mul not supported between 'Coord' and {type(other)}")
+
+    def __rmul__(self, other):
+        return self.__mul__(other)
 
     def __eq__(self, other):
         if isinstance(other, Coord):
             return self.x == other.x and self.y == other.y
         return False
+
+    def __lt__(self, other):
+        if isinstance(other, Coord):
+            if not self.y == other.y:
+                return self.y < other.y
+            else:
+                return self.x < other.x
+        raise TypeError(f"lt not supported between 'Coord' and {type(other)}")
 
     def __hash__(self):
         return hash((self.x, self.y))
