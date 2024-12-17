@@ -12,7 +12,11 @@ class Coord:
 
     def __mul__(self, other):
         if isinstance(other, int):
+            # multiplication par un scalaire
             return Coord(self.x * other, self.y * other)
+        if isinstance(other, Coord):
+            # produit scalaire
+            return self.x * other.x + self.y * other.y
         raise TypeError(f"mul not supported between 'Coord' and {type(other)}")
 
     def __rmul__(self, other):
