@@ -9,7 +9,7 @@ class Day1Test(TestCase):
         self.assertEqual(1227775554, part1(get_input_test("day2")))
 
     def test_day2_part1(self):
-        self.assertEqual(1102, part1(get_input("day2")))
+        self.assertEqual(31210613313, part1(get_input("day2")))
 
     def test_day2_part2_ex1(self):
         self.assertEqual(4174379265, part2(get_input_test("day2")))
